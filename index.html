@@ -48,7 +48,7 @@
         }
 
         .slide:active {
-            transform: scale(0.999); /* Легкий отклик при нажатии */
+            transform: scale(0.999);
         }
 
         /* --- ТЕМЫ --- */
@@ -137,7 +137,6 @@
             height: 350px;
             object-fit: cover;
             object-position: top center;
-            /* Фильтр grayscale убран, так как он часто ломает html2canvas */
         }
         .person-text {
             padding: 40px;
@@ -159,7 +158,8 @@
                 </div>
             </div>
             <div>
-                <img src="титульник.jpg" class="img-cover" alt="Титульный слайд">
+                <!-- Замените ВАШ_НИК и НАЗВАНИЕ_РЕПО на свои -->
+                <img src="https://ВАШ_НИК.github.io/НАЗВАНИЕ_РЕПО/docs/титульник.jpg" class="img-cover" crossorigin="anonymous" alt="Титульный слайд">
             </div>
         </div>
     </section>
@@ -182,7 +182,7 @@
                 
                 <!-- Правая часть: Картинка 1_слайд.jpg -->
                 <div style="height: 650px; border-radius: 4px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
-                    <img src="1_слайд.jpg" class="img-cover" alt="Лобби отеля">
+                    <img src="https://ВАШ_НИК.github.io/НАЗВАНИЕ_РЕПО/docs/1_слайд.jpg" class="img-cover" crossorigin="anonymous" alt="Лобби отеля">
                 </div>
             </div>
         </div>
@@ -229,7 +229,7 @@
             <div class="grid-half" style="gap: 60px; height: 520px;">
                 <!-- Статлер -->
                 <div class="person-card">
-                    <img src="Элсворт_Статлер_3_слайд.jpg" class="person-img" style="object-position: top center;" alt="Элсворт Статлер">
+                    <img src="https://ВАШ_НИК.github.io/НАЗВАНИЕ_РЕПО/docs/Элсворт_Статлер_3_слайд.jpg" class="person-img" crossorigin="anonymous" style="object-position: top center;" alt="Элсворт Статлер">
                     <div class="person-text">
                         <h3 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 10px;">Элсворт Статлер</h3>
                         <p style="font-size: 22px;">Сделал комфорт доступным для среднего класса. Ввёл единые стандарты обслуживания и первым поставил в номера телефон и радио.</p>
@@ -237,7 +237,7 @@
                 </div>
                 <!-- Хилтон -->
                 <div class="person-card">
-                    <img src="Конрад_Хилтон_3_слайд.png" class="person-img" style="object-position: top center;" alt="Конрад Хилтон">
+                    <img src="https://ВАШ_НИК.github.io/НАЗВАНИЕ_РЕПО/docs/Конрад_Хилтон_3_слайд.png" class="person-img" crossorigin="anonymous" style="object-position: top center;" alt="Конрад Хилтон">
                     <div class="person-text">
                         <h3 style="font-family: var(--font-serif); font-size: 40px; margin-bottom: 10px;">Конрад Хилтон</h3>
                         <p style="font-size: 22px;">Придумал присваивать отелям звёзды. Масштабировал сети через франчайзинг, создав империю Hilton в 120+ странах.</p>
@@ -249,7 +249,7 @@
 
     <!-- СЛАЙД 5: ИСТОРИЯ В РОССИИ (С ГРАДИЕНТОМ) -->
     <section class="slide theme-dark" onclick="saveSlide(event, this)" style="position: relative; padding: 0;">
-        <img src="4_слайд.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: left center; z-index: 1;" alt="История России">
+        <img src="https://ВАШ_НИК.github.io/НАЗВАНИЕ_РЕПО/docs/4_слайд.jpg" crossorigin="anonymous" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: left center; z-index: 1;" alt="История России">
         
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, rgba(15, 26, 48, 0) 30%, rgba(15, 26, 48, 0.8) 55%, rgba(15, 26, 48, 1) 80%); z-index: 2;"></div>
 
@@ -282,7 +282,7 @@
             </div>
             <div class="grid-content">
                 <div style="height: 600px; border-radius: 4px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); display: flex; justify-content: center; background: #e0dcd3;">
-                    <img src="В._А._Кокорев_5_слайд.jpg" style="height: 100%; object-fit: contain;" alt="Василий Кокорев">
+                    <img src="https://ВАШ_НИК.github.io/НАЗВАНИЕ_РЕПО/docs/В._А._Кокорев_5_слайд.jpg" crossorigin="anonymous" style="height: 100%; object-fit: contain;" alt="Василий Кокорев">
                 </div>
                 <div>
                     <h2 class="slide-title">Василий<br>Кокорев</h2>
@@ -355,7 +355,7 @@
                 </p>
             </div>
             <div style="flex: 0.8;">
-                <img src="8_слайд.jpg" class="img-cover" alt="Hyatt Regency">
+                <img src="https://ВАШ_НИК.github.io/НАЗВАНИЕ_РЕПО/docs/8_слайд.jpg" class="img-cover" crossorigin="anonymous" alt="Hyatt Regency">
             </div>
         </div>
     </section>
@@ -371,13 +371,12 @@
         </div>
     </section>
 
-    <!-- ОБНОВЛЕННЫЙ СКРИПТ СОХРАНЕНИЯ -->
+    <!-- СКРИПТ СОХРАНЕНИЯ -->
     <script>
         function saveSlide(event, element) {
             event.preventDefault(); 
             element.style.cursor = 'wait';
 
-            // Добавлены параметры allowTaint и logging для стабильной работы с локальными картинками
             html2canvas(element, {
                 scale: 2, 
                 useCORS: true, 
@@ -393,7 +392,7 @@
             }).catch(err => {
                 console.error("Ошибка сохранения:", err);
                 element.style.cursor = 'pointer';
-                alert("Не удалось сохранить слайд. Если вы открываете файл просто двойным кликом, браузер может блокировать картинки. Попробуйте открыть файл через программу Live Server в VS Code.");
+                alert("Не удалось сохранить слайд. Убедитесь, что картинки загружены с GitHub Pages.");
             });
         }
     </script>
